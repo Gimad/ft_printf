@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Gimad/Desktop/ft_printf/ft_numbers.c
+ft_printf.h
+/Users/Gimad/Desktop/ft_printf/ft_printf.h
+
+/Users/Gimad/Desktop/ft_printf/ft_printf.h
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+stdarg.h
+-
+stdint.h
+-
+limits.h
+-
+float.h
+-
+wctype.h
+-
+
