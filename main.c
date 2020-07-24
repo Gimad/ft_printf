@@ -15,7 +15,8 @@
 
 int		main(void)
 {
-	ft_printf("%hi!\n", -123456789);
-	printf("%hi!", -123456789);
+	ft_printf("%o", -1);
+	ft_printf("%s!\n", "Cердито прокричал Денисов и отошел в сторону.");
+	printf("%o!\n", -1);
 	return (0);
 }

@@ -72,19 +72,15 @@ void	ft_find_size(f_ptf_all *info)
 
 void	ft_type(f_ptf_all *info)
 {
-	//info->cap = ft_strany("FPX", *info->frmt);
+	info->cap = ft_strany("AFPX", *info->frmt);
 	if (*info->frmt == 's')
 		ft_str_arg(info);
 	else if (*info->frmt == 'c')
 		ft_chr_arg(info);
 	else if (*info->frmt == 'd' || *info->frmt == 'i')
-	{
 		ft_nmbr_arg(info);
-	}
 	else if (*info->frmt == 'f')
-	{
 		ft_float(info);
-	}
 	else if (*info->frmt == 'p' && (info->flags |= FLAG_PTR))
 		ft_unmbr_arg(info, 16);
 	else if (*info->frmt == 'o')

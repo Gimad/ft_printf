@@ -23,12 +23,11 @@ void	print_all(f_ptf_all *info, char *data, size_t size)
 	size_t		data_index;
 
 	data_index = 0;
-	info->buff_index = 0;
 	while ((remaining_space = BUFF_SIZE - info->buff_index) < (int)size)
 	{
-		//if (size == 1)
-			//info->buff[info->buff_index] = *(char*)data;
-		//else
+		if (size == 1)
+			info->buff[info->buff_index] = *(char*)data;
+		else
 			ft_memcpy(&(info->buff[info->buff_index]), &(data[data_index]),
 					remaining_space);
 		size -= remaining_space;
@@ -91,7 +90,6 @@ int		pars(register f_ptf_all *info)
 			info->frmt++;
 		}
 	}
-	//info->release(info);
 	va_end(info->arg);
 	return (info->printed);
 }

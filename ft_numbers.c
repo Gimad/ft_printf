@@ -15,12 +15,12 @@
 void	ft_print_unmbr(f_ptf_all *info, unsigned int nmbr, int radix)
 {
 	char 	str[BIG_INT];
-	size_t 	need_print;
+	size_t 	need_print = 0;
 
 	if (radix == 8)
 		need_print = ft_uitoa_radix(nmbr, str, radix, info->cap);
-	else
-		;
+	else if (radix == 10)
+		need_print = ft_uitoa_radix(nmbr, str, radix, info->cap);
 	if (!(info->flags & FLAG_REDUCE))
 		info->prec = 0;
 	print_all(info, str, need_print);
@@ -64,7 +64,5 @@ void ft_unmbr_arg(f_ptf_all *info, int radix)
 		nmbr = va_arg(info->arg, unsigned long long);
 	else
 		nmbr = va_arg(info->arg, unsigned int);
-	if (!(info->flags & FLAG_REDUCE))
-		info->prec = 0;
 	ft_print_unmbr(info, nmbr, radix);
 }

@@ -20,7 +20,7 @@ void	ft_pt_str(f_ptf_all *info, char *str, size_t size)
 	padd = (info->flags & FLAG_ZPADD && !(info->flags & FLAG_MINUS))
 			? '0' : ' ';
 	if (info->flags & FLAG_REDUCE)
-		need_print = (info->prec < size) ? info->prec : size;
+		need_print = (info->prec < (long int)size) ? info->prec : size;
 	else
 		need_print = size;
 	if (info->width > 0 && (info->width -= need_print) > 0)
@@ -53,7 +53,7 @@ void	ft_str_arg(f_ptf_all *info)
 
 void	ft_chr_arg(f_ptf_all *info)
 {
-	char	symbol;
+	char	symbol = '\0';
 
 	if (info->prec == 0)
 		info->prec = 1;
